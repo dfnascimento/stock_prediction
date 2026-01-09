@@ -1,10 +1,5 @@
 # 📈 Sistema de Previsão de Preços de Ações com LSTM
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-red)](https://pytorch.org/)
-[![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-green)](LICENSE)
-[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black)](https://vercel.com)
-
 Um sistema de aprendizado profundo para previsão de preços de ações usando redes neurais LSTM com otimização automatizada de hiperparâmetros e capacidades de previsão em tempo real.
 
 
