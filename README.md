@@ -152,14 +152,6 @@ POST (URL)/predict
 - Dias entre 1 e 30
 
 
-## 🙏 Agradecimentos
-
-- [PyTorch](https://pytorch.org/) - Framework de deep learning
-- [Optuna](https://optuna.org/) - Otimização de hiperparâmetros
-- [Yahoo Finance](https://finance.yahoo.com/) - Dados de mercado
-- [Vercel](https://vercel.com/) - Plataforma de deploy
-
-
 
 **Desenvolvido por Diego de Faria do Nascimento**  
 *Última atualização: Janeiro 2026*
