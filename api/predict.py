@@ -1,10 +1,6 @@
-import os
 import torch
-import joblib
 import numpy as np
 from flask import Blueprint, jsonify, request
-from flasgger.utils import swag_from
-from api.transaction_features import TransactionFeatures
 from datetime import datetime
 from src.utils.model_io import load_model_and_scaler
 from config import settings
@@ -40,6 +36,9 @@ def get_predict():
         data = request.json
         prices = data.get('prices', [])
         days = data.get('days', 1)
+        
+        print(prices)
+        print(days)
 
         model.eval()
         
@@ -60,7 +59,7 @@ def get_predict():
                 pred_scaled = model(current_input)
                 
                 pred_value = pred_scaled[0, 0].item()  
-                
+                predictions.append(pred_value)
 
                 new_sequence = torch.cat([
                     current_input[:, 1:, :],  

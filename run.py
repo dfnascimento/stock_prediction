@@ -1,10 +1,7 @@
-import os
-import joblib
-from flask import Flask, request, jsonify
-from flasgger import Swagger
+
+from flask import Flask, jsonify
 from datetime import datetime
 from api.predict import predict
-from config import *
 
 
 app = Flask(__name__)

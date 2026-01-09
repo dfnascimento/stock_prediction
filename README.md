@@ -7,9 +7,6 @@
 
 Um sistema de aprendizado profundo para previsão de preços de ações usando redes neurais LSTM com otimização automatizada de hiperparâmetros e capacidades de previsão em tempo real.
 
-## 🌐 Demonstração Online
-
-- **API**: `https://stock-predictor.vercel.app/api`
 
 ## ✨ Funcionalidades
 
@@ -93,7 +90,6 @@ O sistema segue um pipeline de 7 etapas:
 
 ### 7. **Avaliação e Deploy**
 - Métricas detalhadas
-
 - Preparação para produção
 
 
@@ -114,6 +110,52 @@ O sistema segue um pipeline de 7 etapas:
 | **MAPE** | Erro Percentual Absoluto Médio | 
 | **R²** | Coeficiente de Determinação | 
 
+
+# 🌐 **API de Previsão - Como Usar**
+
+## **Endpoint Principal**
+```
+POST (URL)/predict
+```
+
+## **Parâmetros Obrigatórios**
+| Campo | Tipo | Descrição |
+|-------|------|-----------|
+| `prices` | array | Lista de preços históricos (mínimo 60 valores) |
+| `days` | integer | Número de dias para prever (1-30) |
+
+## **📋 Exemplos JSON**
+
+### **Exemplo Básico**
+```json
+{
+  "prices": [
+    100.0, 101.5, 102.3, 103.8, 102.9, 104.2, 105.5, 103.8, 106.1, 107.3,
+    108.0, 107.5, 109.2, 110.0, 111.3, 110.8, 112.1, 113.4, 112.9, 114.2,
+    115.0, 114.5, 116.2, 117.0, 118.3, 117.8, 119.1, 120.4, 119.9, 121.2,
+    122.0, 121.5, 123.2, 124.0, 125.3, 124.8, 126.1, 127.4, 126.9, 128.2,
+    129.0, 128.5, 130.2, 131.0, 132.3, 131.8, 133.1, 134.4, 133.9, 135.2,
+    136.0, 135.5, 137.2, 138.0, 139.3, 138.8, 140.1, 141.4, 140.9, 142.2
+  ],
+  "days": 3
+}
+```
+
+### **Resposta de Sucesso**
+```json
+{
+  "success": true,
+  "predictions": [210.15, 211.28],
+  "last_price": 209.0,
+  "days": 2,
+  "timestamp": "2024-01-15T10:30:45.123456"
+}
+```
+
+## **⚠️ Requisitos Mínimos**
+- 60 preços históricos
+- Valores numéricos (não strings)
+- Dias entre 1 e 30
 
 
 ## 🙏 Agradecimentos
