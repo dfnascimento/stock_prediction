@@ -107,45 +107,12 @@ O sistema segue um pipeline de 7 etapas:
 
 ## 📈 Métricas de Avaliação
 
-| Métrica | Descrição | Fórmula | Ideal |
-|---------|-----------|---------|-------|
-| **MAE** | Erro Absoluto Médio | $\frac{1}{n}\sum|y-\hat{y}|$ | Quanto menor |
-| **RMSE** | Raiz do Erro Quadrático Médio | $\sqrt{\frac{1}{n}\sum(y-\hat{y})^2}$ | Quanto menor |
-| **MAPE** | Erro Percentual Absoluto Médio | $\frac{100\%}{n}\sum|\frac{y-\hat{y}}{y}|$ | < 5% |
-| **R²** | Coeficiente de Determinação | $1 - \frac{\sum(y-\hat{y})^2}{\sum(y-\bar{y})^2}$ | ≈ 1 |
-
-## 🌐 Deploy no Vercel
-
-
-**API Endpoints Disponíveis**
-```http
-GET    /api/health          # Status do serviço
-POST   /api/predict         # Previsão de ações
-GET    /api/symbols         # Símbolos disponíveis
-GET    /api/history/{symbol}# Histórico de preços
-```
-
-### Exemplo de Uso da API
-
-```python
-import requests
-import json
-
-# Previsão para AAPL nos próximos 7 dias
-payload = {
-    "symbol": "AAPL",
-    "days": 7
-}
-
-response = requests.post(
-    "https://seu-projeto.vercel.app/api/predict",
-    json=payload
-)
-
-result = response.json()
-print(f"Preço atual: ${result['last_price']:.2f}")
-print(f"Previsões: {result['predictions']}")
-```
+| Métrica | Descrição |
+|---------|-----------|
+| **MAE** | Erro Absoluto Médio |
+| **RMSE** | Raiz do Erro Quadrático Médio |
+| **MAPE** | Erro Percentual Absoluto Médio | 
+| **R²** | Coeficiente de Determinação | 
 
 
 
@@ -158,7 +125,7 @@ print(f"Previsões: {result['predictions']}")
 
 
 
-**Desenvolvido com ❤️ por Diego de Faria do Nascimento**  
+**Desenvolvido por Diego de Faria do Nascimento**  
 *Última atualização: Janeiro 2026*
 
 > **⚠️ Disclaimer**: Este projeto é para fins educacionais e de pesquisa. Não é uma recomendação de investimento. O mercado de ações é volátil e previsões passadas não garantem resultados futuros.
