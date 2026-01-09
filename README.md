@@ -21,7 +21,6 @@ Um sistema de aprendizado profundo para previsão de preços de ações usando r
 - Python 3.8+
 - Git
 - Conta no [GitHub](https://github.com)
-- Conta no [Vercel](https://vercel.com) (para deploy)
 
 ### Instalação Local
 
