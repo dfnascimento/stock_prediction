@@ -1,0 +1,69 @@
+2026-01-09 12:08:44,571 - StockPrediction - INFO - 
+============================================================
+2026-01-09 12:08:44,571 - StockPrediction - INFO - INÍCIO DO PIPELINE DE PREVISÃO
+2026-01-09 12:08:44,571 - StockPrediction - INFO - ============================================================
+2026-01-09 12:08:45,355 - StockPrediction - INFO - Dispositivo: cuda
+2026-01-09 12:08:45,356 - StockPrediction - INFO - 
+============================================================
+2026-01-09 12:08:45,356 - StockPrediction - INFO - 1. COLETA DE DADOS
+2026-01-09 12:08:45,356 - StockPrediction - INFO - ============================================================
+2026-01-09 12:08:46,254 - StockPrediction - INFO - Símbolo: PETR4.SA
+2026-01-09 12:08:46,257 - StockPrediction - INFO - Período: 2018-01-02 a 2025-12-30
+2026-01-09 12:08:46,258 - StockPrediction - INFO - Total de dias: 1988
+2026-01-09 12:08:46,258 - StockPrediction - INFO - Preço inicial: R$ 4.41
+2026-01-09 12:08:46,258 - StockPrediction - INFO - Preço final: R$ 30.82
+2026-01-09 12:08:46,258 - StockPrediction - INFO - Variação: 598.76%
+2026-01-09 12:08:46,258 - StockPrediction - INFO - 
+============================================================
+2026-01-09 12:08:46,258 - StockPrediction - INFO - 2. PRÉ-PROCESSAMENTO
+2026-01-09 12:08:46,259 - StockPrediction - INFO - ============================================================
+2026-01-09 12:08:46,262 - StockPrediction - INFO - Sequências criadas: 1928
+2026-01-09 12:08:46,262 - StockPrediction - INFO - Comprimento da sequência: 60 dias
+2026-01-09 12:08:46,262 - StockPrediction - INFO - Formato de X: (1928, 60, 1)
+2026-01-09 12:08:46,263 - StockPrediction - INFO - Formato de y: (1928, 1)
+2026-01-09 12:08:46,263 - StockPrediction - INFO - Dados normalizados - Média: 0.3838, Desvio padrão: 0.3188
+2026-01-09 12:08:46,263 - StockPrediction - INFO - 
+============================================================
+2026-01-09 12:08:46,263 - StockPrediction - INFO - 3. DIVISÃO DOS DADOS
+2026-01-09 12:08:46,263 - StockPrediction - INFO - ============================================================
+2026-01-09 12:08:46,263 - StockPrediction - INFO - TRAIN     : 1542 amostras (80.0%)
+2026-01-09 12:08:46,264 - StockPrediction - INFO - VAL       :  192 amostras (10.0%)
+2026-01-09 12:08:46,264 - StockPrediction - INFO - TEST      :  194 amostras (10.1%)
+2026-01-09 12:08:46,267 - StockPrediction - INFO - 
+============================================================
+2026-01-09 12:08:46,267 - StockPrediction - INFO - 4. TREINAMENTO DO MODELO
+2026-01-09 12:08:46,267 - StockPrediction - INFO - ============================================================
+2026-01-09 12:08:49,386 - StockPrediction - INFO - Arquitetura: LSTM
+2026-01-09 12:08:49,386 - StockPrediction - INFO - Tamanho da camada oculta: 50
+2026-01-09 12:08:49,386 - StockPrediction - INFO - Número de camadas: 2
+2026-01-09 12:08:49,386 - StockPrediction - INFO - Parâmetros totais: 31,051
+2026-01-09 12:08:49,387 - StockPrediction - INFO - Parâmetros treináveis: 31,051
+2026-01-09 12:08:50,819 - StockPrediction - INFO - Iniciando treinamento...
+2026-01-09 12:08:50,819 - StockPrediction - INFO - Épocas: 100, Paciência: 15, Batch Size: 32, Learning Rate: 0.001
+2026-01-09 12:09:47,670 - StockPrediction - INFO - Treinamento concluído!
+2026-01-09 12:09:47,670 - StockPrediction - INFO - Melhor val loss: 0.000346 (época 85)
+2026-01-09 12:09:47,670 - StockPrediction - INFO - 
+============================================================
+2026-01-09 12:09:47,670 - StockPrediction - INFO - 5. OTIMIZAÇÃO DE HIPERPARÂMETROS (OPCIONAL)
+2026-01-09 12:09:47,670 - StockPrediction - INFO - ============================================================
+2026-01-09 12:16:54,137 - StockPrediction - INFO - Melhores hiperparâmetros encontrados:
+2026-01-09 12:16:54,138 - StockPrediction - INFO -   hidden_size: 128
+2026-01-09 12:16:54,138 - StockPrediction - INFO -   num_layers: 2
+2026-01-09 12:16:54,138 - StockPrediction - INFO -   dropout: 0.11233480725217074
+2026-01-09 12:16:54,138 - StockPrediction - INFO -   learning_rate: 0.0018303874368033107
+2026-01-09 12:16:54,139 - StockPrediction - INFO -   batch_size: 32
+2026-01-09 12:16:54,139 - StockPrediction - INFO - 
+============================================================
+2026-01-09 12:16:54,139 - StockPrediction - INFO - 6. AVALIAÇÃO DO MODELO
+2026-01-09 12:16:54,139 - StockPrediction - INFO - ============================================================
+2026-01-09 12:16:54,156 - StockPrediction - INFO - 
+============================================================
+2026-01-09 12:16:54,157 - StockPrediction - INFO - 7. RESUMO FINAL
+2026-01-09 12:16:54,157 - StockPrediction - INFO - ============================================================
+2026-01-09 12:16:54,157 - StockPrediction - INFO - Pipeline executado com sucesso!
+2026-01-09 12:16:54,157 - StockPrediction - INFO - Símbolo: PETR4.SA
+2026-01-09 12:16:54,158 - StockPrediction - INFO - Período: 2018-01-02 a 2025-12-30
+2026-01-09 12:16:54,158 - StockPrediction - INFO - Modelo: LSTM (31,051 parâmetros)
+2026-01-09 12:16:54,158 - StockPrediction - INFO - MAE: R$ 0.45
+2026-01-09 12:16:54,158 - StockPrediction - INFO - MAPE: 1.51%
+2026-01-09 12:16:54,159 - StockPrediction - INFO - R²: 0.7501

@@ -1,0 +1,35 @@
+2026-01-08 23:21:33,177 - StockPrediction - INFO - 
+============================================================
+2026-01-08 23:21:33,178 - StockPrediction - INFO - INÍCIO DO PIPELINE DE PREVISÃO
+2026-01-08 23:21:33,179 - StockPrediction - INFO - ============================================================
+2026-01-08 23:21:34,290 - StockPrediction - INFO - Dispositivo: cuda
+2026-01-08 23:21:34,291 - StockPrediction - INFO - 
+============================================================
+2026-01-08 23:21:34,295 - StockPrediction - INFO - 1. COLETA DE DADOS
+2026-01-08 23:21:34,298 - StockPrediction - INFO - ============================================================
+2026-01-08 23:21:35,782 - StockPrediction - INFO - Símbolo: PETR4.SA
+2026-01-08 23:21:35,783 - StockPrediction - INFO - Período: 2018-01-02 a 2025-12-30
+2026-01-08 23:21:35,783 - StockPrediction - INFO - Total de dias: 1988
+2026-01-08 23:21:35,783 - StockPrediction - INFO - Preço inicial: R$ 4.41
+2026-01-08 23:21:35,784 - StockPrediction - INFO - Preço final: R$ 30.82
+2026-01-08 23:21:35,784 - StockPrediction - INFO - Variação: 598.76%
+2026-01-08 23:21:35,784 - StockPrediction - INFO - 
+============================================================
+2026-01-08 23:21:35,785 - StockPrediction - INFO - 2. PRÉ-PROCESSAMENTO
+2026-01-08 23:21:35,785 - StockPrediction - INFO - ============================================================
+2026-01-08 23:21:35,793 - StockPrediction - INFO - Sequências criadas: 1928
+2026-01-08 23:21:35,794 - StockPrediction - INFO - Comprimento da sequência: 60 dias
+2026-01-08 23:21:35,794 - StockPrediction - INFO - Formato de X: (1928, 60, 1)
+2026-01-08 23:21:35,794 - StockPrediction - INFO - Formato de y: (1928, 1)
+2026-01-08 23:21:35,795 - StockPrediction - INFO - Dados normalizados - Média: 0.3838, Desvio padrão: 0.3188
+2026-01-08 23:21:35,795 - StockPrediction - INFO - 
+============================================================
+2026-01-08 23:21:35,796 - StockPrediction - INFO - 3. DIVISÃO DOS DADOS
+2026-01-08 23:21:35,796 - StockPrediction - INFO - ============================================================
+2026-01-08 23:21:35,796 - StockPrediction - INFO - TRAIN     : 1542 amostras (80.0%)
+2026-01-08 23:21:35,796 - StockPrediction - INFO - VAL       :  192 amostras (10.0%)
+2026-01-08 23:21:35,797 - StockPrediction - INFO - TEST      :  194 amostras (10.1%)
+2026-01-08 23:21:35,801 - StockPrediction - INFO - 
+============================================================
+2026-01-08 23:21:35,802 - StockPrediction - INFO - 4. TREINAMENTO DO MODELO
+2026-01-08 23:21:35,807 - StockPrediction - INFO - ============================================================
