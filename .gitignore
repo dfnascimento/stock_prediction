@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.vscode/
+.idea/
+*.pkl
+*.h5
+*.pth
+*.pt
+.DS_Store
+
+# Dados sensíveis
+.env
+*.env
+secrets.json
+
+# Logs
+*.log
+logs/
+
+# Outros
+models/
+data/
+*.csv
+*.xlsx

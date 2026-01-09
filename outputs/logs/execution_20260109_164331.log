@@ -2,3 +2,63 @@
 ============================================================
 2026-01-09 16:43:31,836 - StockPrediction - INFO - INÍCIO DO PIPELINE DE PREVISÃO
 2026-01-09 16:43:31,836 - StockPrediction - INFO - ============================================================
+2026-01-09 16:43:33,536 - StockPrediction - INFO - Dispositivo: cuda
+2026-01-09 16:43:33,536 - StockPrediction - INFO - 
+============================================================
+2026-01-09 16:43:33,538 - StockPrediction - INFO - 1. COLETA DE DADOS
+2026-01-09 16:43:33,539 - StockPrediction - INFO - ============================================================
+2026-01-09 16:43:34,674 - StockPrediction - INFO - Símbolo: PETR4.SA
+2026-01-09 16:43:34,675 - StockPrediction - INFO - Período: 2018-01-02 a 2025-12-30
+2026-01-09 16:43:34,675 - StockPrediction - INFO - Total de dias: 1988
+2026-01-09 16:43:34,676 - StockPrediction - INFO - Preço inicial: R$ 4.41
+2026-01-09 16:43:34,676 - StockPrediction - INFO - Preço final: R$ 30.82
+2026-01-09 16:43:34,677 - StockPrediction - INFO - Variação: 598.76%
+2026-01-09 16:43:34,678 - StockPrediction - INFO - 
+============================================================
+2026-01-09 16:43:34,678 - StockPrediction - INFO - 2. PRÉ-PROCESSAMENTO
+2026-01-09 16:43:34,678 - StockPrediction - INFO - ============================================================
+2026-01-09 16:43:34,691 - StockPrediction - INFO - Sequências criadas: 1928
+2026-01-09 16:43:34,691 - StockPrediction - INFO - Comprimento da sequência: 60 dias
+2026-01-09 16:43:34,692 - StockPrediction - INFO - Formato de X: (1928, 60, 1)
+2026-01-09 16:43:34,695 - StockPrediction - INFO - Formato de y: (1928, 1)
+2026-01-09 16:43:34,695 - StockPrediction - INFO - Dados normalizados - Média: 0.3838, Desvio padrão: 0.3188
+2026-01-09 16:43:34,696 - StockPrediction - INFO - 
+============================================================
+2026-01-09 16:43:34,697 - StockPrediction - INFO - 3. DIVISÃO DOS DADOS
+2026-01-09 16:43:34,698 - StockPrediction - INFO - ============================================================
+2026-01-09 16:43:34,699 - StockPrediction - INFO - TRAIN     : 1542 amostras (80.0%)
+2026-01-09 16:43:34,700 - StockPrediction - INFO - VAL       :  192 amostras (10.0%)
+2026-01-09 16:43:34,700 - StockPrediction - INFO - TEST      :  194 amostras (10.1%)
+2026-01-09 16:43:34,707 - StockPrediction - INFO - 
+============================================================
+2026-01-09 16:43:34,708 - StockPrediction - INFO - 4. TREINAMENTO DO MODELO
+2026-01-09 16:43:34,710 - StockPrediction - INFO - ============================================================
+2026-01-09 16:43:39,586 - StockPrediction - INFO - Arquitetura: LSTM
+2026-01-09 16:43:39,587 - StockPrediction - INFO - Tamanho da camada oculta: 50
+2026-01-09 16:43:39,587 - StockPrediction - INFO - Número de camadas: 2
+2026-01-09 16:43:39,588 - StockPrediction - INFO - Parâmetros totais: 31,051
+2026-01-09 16:43:39,588 - StockPrediction - INFO - Parâmetros treináveis: 31,051
+2026-01-09 16:43:42,283 - StockPrediction - INFO - Iniciando treinamento...
+2026-01-09 16:43:42,283 - StockPrediction - INFO - Épocas: 100, Paciência: 15, Batch Size: 32, Learning Rate: 0.001
+2026-01-09 16:44:02,744 - StockPrediction - INFO - Treinamento concluído!
+2026-01-09 16:44:02,745 - StockPrediction - INFO - Melhor val loss: 0.000429 (época 26)
+2026-01-09 16:44:02,745 - StockPrediction - INFO - 
+============================================================
+2026-01-09 16:44:02,745 - StockPrediction - INFO - 5. OTIMIZAÇÃO DE HIPERPARÂMETROS
+2026-01-09 16:44:02,746 - StockPrediction - INFO - ============================================================
+2026-01-09 16:56:03,486 - StockPrediction - INFO - Melhores hiperparâmetros encontrados:
+2026-01-09 16:56:03,487 - StockPrediction - INFO -   hidden_size: 192
+2026-01-09 16:56:03,487 - StockPrediction - INFO -   num_layers: 3
+2026-01-09 16:56:03,487 - StockPrediction - INFO -   dropout: 0.22188635044163896
+2026-01-09 16:56:03,488 - StockPrediction - INFO -   learning_rate: 0.0013539340723980654
+2026-01-09 16:56:03,488 - StockPrediction - INFO -   batch_size: 16
+2026-01-09 16:56:03,488 - StockPrediction - INFO - 
+============================================================
+2026-01-09 16:56:03,489 - StockPrediction - INFO - 6. RETREINO COM MELHORES HIPERPARÂMETROS
+2026-01-09 16:56:03,489 - StockPrediction - INFO - ============================================================
+2026-01-09 16:56:03,489 - StockPrediction - INFO - Criando novo modelo com melhores parâmetros:
+2026-01-09 16:56:03,490 - StockPrediction - INFO -   Hidden Size: 192
+2026-01-09 16:56:03,490 - StockPrediction - INFO -   Num Layers: 3
+2026-01-09 16:56:03,491 - StockPrediction - INFO -   Dropout: 0.22188635044163896
+2026-01-09 16:56:03,552 - StockPrediction - INFO - Iniciando retreino com learning rate: 0.0013539340723980654
+2026-01-09 16:56:03,553 - StockPrediction - INFO - Épocas: 100, Paciência: 15
