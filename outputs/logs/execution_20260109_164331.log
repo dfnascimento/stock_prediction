@@ -62,3 +62,22 @@
 2026-01-09 16:56:03,491 - StockPrediction - INFO -   Dropout: 0.22188635044163896
 2026-01-09 16:56:03,552 - StockPrediction - INFO - Iniciando retreino com learning rate: 0.0013539340723980654
 2026-01-09 16:56:03,553 - StockPrediction - INFO - Épocas: 100, Paciência: 15
+2026-01-09 17:24:48,071 - StockPrediction - INFO - Retreino concluído!
+2026-01-09 17:24:48,071 - StockPrediction - INFO - Melhor val loss: 0.000260 (época 72)
+2026-01-09 17:24:48,073 - StockPrediction - INFO - 
+============================================================
+2026-01-09 17:24:48,073 - StockPrediction - INFO - 6. AVALIAÇÃO DO MODELO
+2026-01-09 17:24:48,073 - StockPrediction - INFO - ============================================================
+2026-01-09 17:24:49,998 - StockPrediction - INFO - 
+============================================================
+2026-01-09 17:24:49,999 - StockPrediction - INFO - 7. SALVAMENTO DO MODELO
+2026-01-09 17:24:49,999 - StockPrediction - INFO - ============================================================
+2026-01-09 17:24:50,034 - StockPrediction - INFO - Modelo salvo: models/model_20260109_172450.pth
+2026-01-09 17:24:50,034 - StockPrediction - INFO - Scaler salvo: models/scaler_20260109_172450.pkl
+2026-01-09 17:24:50,034 - StockPrediction - INFO - Pipeline executado com sucesso!
+2026-01-09 17:24:50,034 - StockPrediction - INFO - Símbolo: PETR4.SA
+2026-01-09 17:24:50,035 - StockPrediction - INFO - Período: 2018-01-02 a 2025-12-30
+2026-01-09 17:24:50,035 - StockPrediction - INFO - Modelo: LSTM (31,051 parâmetros)
+2026-01-09 17:24:50,035 - StockPrediction - INFO - MAE: R$ 0.38
+2026-01-09 17:24:50,035 - StockPrediction - INFO - MAPE: 1.27%
+2026-01-09 17:24:50,036 - StockPrediction - INFO - R²: 0.8218
