@@ -14,7 +14,8 @@ from src.models.lstm_model import LSTMModel
 predict = Blueprint('predict', __name__ )
 
 # Configurar dispositivo
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+#device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
 
 try:
     model, scaler = load_model_and_scaler(settings.MODELS_DIR, 
@@ -39,6 +40,8 @@ def get_predict():
         data = request.json
         prices = data.get('prices', [])
         days = data.get('days', 1)
+
+        model.eval()
         
         # Preparar entrada
         recent_prices = prices[-60:]  # último SEQUENCE_LENGTH dias
@@ -49,18 +52,22 @@ def get_predict():
         input_tensor = torch.FloatTensor(scaled.reshape(1, 60, 1))
         
         # Fazer previsão
-        model.eval()
+        predictions = []
+        current_input = input_tensor.clone()  
+        
         with torch.no_grad():
-            predictions = []
-            current_input = input_tensor
-            
             for _ in range(days):
-                pred_scaled = model(current_input).numpy()
-                predictions.append(pred_scaled[0, 0])
+                pred_scaled = model(current_input)
                 
-                # Atualizar entrada
-                current_input = torch.roll(current_input, -1, dims=1)
-                current_input[0, -1, 0] = pred_scaled[0, 0]
+                pred_value = pred_scaled[0, 0].item()  
+                
+
+                new_sequence = torch.cat([
+                    current_input[:, 1:, :],  
+                    pred_scaled.unsqueeze(1)   
+                ], dim=1)
+                
+                current_input = new_sequence
         
         # Desnormalizar
         preds_array = np.array(predictions).reshape(-1, 1)

@@ -75,25 +75,23 @@ def load_model_and_scaler(folder='models', device='cpu', model_class=LSTMModel):
         input_size=config['input_size'],
         hidden_size=config['hidden_size'],
         num_layers=config['num_layers'],
-        dropout=config.get('dropout_rate')  # Carregar dropout rate
+        dropout=config.get('dropout')  # Carregar dropout rate
 
 
-    
-    # Imprimir de forma simples
+
     print("=" * 50)
     print("CONFIGURAÇÕES DO MODELO CARREGADO")
     print("=" * 50)
-    print(f"Input Size:    {input_size}")
-    print(f"Hidden Size:   {hidden_size}")
-    print(f"Num Layers:    {num_layers}")
-    print(f"Dropout:       {dropout}")
+    print(f"Input Size:    {input_size[0]}")
+    print(f"Hidden Size:   {hidden_size[0]}")
+    print(f"Num Layers:    {num_layers[0]}")
+    print(f"Dropout:       {dropout.p}")
     print("=" * 50)
     
-    print(input_size)
     if model_class is None:
         raise ValueError("Forneça a classe do modelo (model_class)")
     
-    model = model_class(input_size, hidden_size, num_layers, dropout).to(device)
+    model = model_class(input_size[0], hidden_size[0], num_layers[0], dropout.p).to(device)
     model.load_state_dict(checkpoint['model_state_dict'])
     model.eval()
     
